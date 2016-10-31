@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Set table height and center table</title>
+
+    <script type="text/javascript" src="./js/jQuery.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="./css/index.css">
+    <link rel="stylesheet" type="text/css" href="./css/base.css">
+    <link rel="stylesheet" type="text/css" href="./css/jquery-ui.custom.css">
+	<link rel="stylesheet" type="text/css" href="./css/centerTable.css">
+
+</head>
+<body>
+
+<!--
+
+Your task(s):
+    center the table with 50px of padding on both sides, but not the top and bottom with only css
+
+    also make the height of the table take up the full height of the page but with 25px of distance from the very very
+    bottom of the page to the very outermost outline/border of the table. DO NOT USE MARGIN OR PADDING TO ACHIEVE THE 25px distance.
+    I'm trying to show you a concept that will be important.
+        when the page is resized (bigger and smaller), make sure that the table holds the 25px distance value from the
+        bottom of the page
+
+        -hint, two elements to play with until you figure it out:
+            outerDivForTableId, and tableBodyId
+
+
+    you can use javascript, and - if needed - jquery. You can do it without jquery and the first time I did this
+    I didn't touch jquery..but its there to help..
+
+
+
+    also, you might see the following `get` request errors in the js console in chrome or other web browser - ignore these particular ones, I dont want
+    to fix them for just this example and for your tasks they are not important to fix
+
+    GET http://localhost:8080/css/images/ui-bg_flat_75_ffffff_40x100.png 404 (Not Found)
+    GET http://localhost/:142 GET http://localhost:8080/css/images/ui-bg_highlight-soft_75_cccccc_1x100.png 404 (Not Found)
+    GET http://localhost/:142 GET http://localhost:8080/css/images/ui-icons_454545_256x240.png 404 (Not Found)
+    GET http://localhost/:142 GET http://localhost:8080/css/images/ui-bg_glass_75_e6e6e6_1x400.png 404 (Not Found)
+-->
+
+
+
+
+<div class="ui-widget ui-widget-content ui-corner-all outerDivForTableClass" style="margin-top: 5px; padding: 5px; font-size: 1em; width: 790px;" id="outerDivForTableId">
+    <div class="t_fixed_header_main_wrapper ui-widget ui-widget-header table_fixed_header_main_wrapper_3160328 ui ui-corner-all" id="t_fixed_header_main_wrapperId">
+        <div class="t_fixed_header_caption ui-widget-header ui-corner-top" id="t_fixed_header_captionId">All Pending Referrals
+            <div style="cursor : pointer; display : inline-block; vertical-align : middle; background : none; border : none;" class="ui-state-active"><span class="ui-icon ui-icon-triangle-1-n">&nbsp;</span>
+            </div>
+        </div>
+        <div class="t_fixed_header_main_wrapper_child" id="mainWrapperChildId" style="overflow-y: hidden;">
+            <div class="t_fixed_header ui-state-default default t_fixed_header_3160328 ui" style="border: none; font-weight: normal;">
+                <div class="headtable ui-state-default" style="margin-right : 0px" id="headtableId">
+                    <div>
+                        <table class="head" id="headId">
+                            <colgroup></colgroup>
+                            <thead>
+                                <tr>
+                                    <th class="ui-widget-content ui-state-default">
+                                        <center>Data Export</center>
+                                    </th>
+                                    <th class="ui-widget-content ui-state-default">Days Out</th>
+                                    <th class="ui-widget-content ui-state-default">Total Pending</th>
+                                    <th class="ui-widget-content ui-state-default">Estimated <b>Total</b>
+                                        <br>PRC Cost</th>
+                                    <th class="ui-widget-content ui-state-default">Estimated <b>IHS</b>
+                                        <br>PRC Cost</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+                <div class="body ui-widget-content tableBodyClass" id="tableBodyId" style="overflow-y: auto; height: 277px;">
+                    <div>
+                        <table id="table1" class="table">
+                            <colgroup></colgroup>
+                            <thead id="invisibleTableHeader" class="invisibleTableHeader">
+                                <tr style="display: none;">
+                                    <th id="thId1"></th>
+                                    <th id="thId2"></th>
+                                    <th id="thId3"></th>
+                                    <th id="thId4"></th>
+                                    <th id="thId5"></th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+                                    <td class="ui-widget-content">
+                                        <!--
+	<div class="exptbtn ui-state-active" style="border:none;background:none;">
+	<span class="ui-icon ui-icon-disk" onclick="expt('5^>14 Days^15^');"></span></div>-->
+                                    </td>
+                                    <td class="ui-widget-content">
+                                        <div class="days">
+                                            <a href='javascript:go(21386,">14 Days","5^>14 Days^15^","");'>
+                                                <font color="#3C69B7"> &gt;14 Days </font>
+                                            </a>
+                                        </div>
+                                    </td>
+                                    <td class="ui-widget-content">
+                                        <div align="right" class="headerTotal">21,386</div>
+                                    </td>
+                                    <td class="ui-widget-content">
+                                        <div align="right" style="padding-right:25px;">4,267,472.00</div>
+                                    </td>
+                                    <td class="ui-widget-content">
+                                        <div align="right" style="padding-right:25px;">4,265,772.00</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="ui-widget-content">
+                                        <center>
+                                            <div class="exptbtn ui-state-active" style="border:none;background:none;">
+                                                <span class="ui-icon ui-icon-disk" onclick="exptAll();"></span>
+                                            </div>
+                                        </center>
+                                    </td>
+                                    <td class="ui-widget-content"><b><a href="MARSRCISPND1.csp?MARSBACK=2&amp;MARSDRNG=ALL&amp;MARSRTYP="><font color="#3C69B7"><b>All</b>
+                                        </font>
+                                        </a>
+                                        </b>
+                                    </td>
+                                    <td class="ui-widget-content">
+                                        <div align="right"><b>21,386</b>
+                                        </div><b></b>
+                                    </td>
+                                    <td class="ui-widget-content">
+                                        <div align="right" style="padding-right:25px;"><b>4,267,472.00</b>
+                                        </div>
+                                    </td>
+                                    <td class="ui-widget-content">
+                                        <div align="right" style="padding-right:25px;"><b>4,265,772.00</b>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- <script type="text/javascript" src="./dist/bundle.js"></script> -->
+	<script type="text/javascript" src="./js/setTableHeight.js"></script>
+	
+</body>
+</html>
