@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>GaugeGraph</title>
+
+
+	<style type="text/css">
+		html, body {
+			width: 100%;
+			height: 100%;
+			padding: 0;
+			margin: 0;
+		}
+
+	</style>
+	<!-- <link rel="stylesheet" type="text/css" href="./css/cmGauge.css"> -->
+	
+	<script type="text/javascript" src="./js/jquery.js"></script>
+	<!-- <script type="text/javascript" src="./js/jquery.keyframes.js"></script> -->
+	<script type="text/javascript" src="./js/cmGauge.js"></script>
+	<script type="text/javascript" src="./js/detectBrowser.js"></script>
+
+</head>
+<body>
+
+	<script type="text/javascript">
+		window.getGraphDataHelper = function() {
+			return {
+				p236: [30],
+				mmr: [20],
+				dtap: [10]
+			}
+		}
+
+		/*
+			p236: 'P236',
+			wellchild: 'Wellchild',
+			dtap: 'DTap'
+		*/
+	</script>
+
+	<div id="CQMMeasuresGraph" style="display: block;"></div><!-- the height of this element gets calculated and assigned during runtime based on the height of the viewport at runtime -->
+
+
+	<div id="GaugeGraph1" style="display: inline-block;"></div>
+	<div id="GaugeGraph2" style="display: inline-block;"></div>
+	<div id="GaugeGraph3" style="display: inline-block;"></div>
+	
+
+
+	<script type="text/javascript" src="./dist/bundle.js"></script>
+	
+</body>
+</html>
